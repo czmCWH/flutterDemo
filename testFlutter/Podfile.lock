@@ -1,0 +1,35 @@
+PODS:
+  - Flutter (1.0.0)
+  - flutter_module_books (0.0.1):
+    - Flutter
+  - FlutterPluginRegistrant (0.0.1):
+    - Flutter
+  - SnapKit (5.0.1)
+
+DEPENDENCIES:
+  - Flutter (from `../flutter_module_books/.ios/Flutter/engine`)
+  - flutter_module_books (from `../flutter_module_books/.ios/Flutter`)
+  - FlutterPluginRegistrant (from `../flutter_module_books/.ios/Flutter/FlutterPluginRegistrant`)
+  - SnapKit
+
+SPEC REPOS:
+  trunk:
+    - SnapKit
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: "../flutter_module_books/.ios/Flutter/engine"
+  flutter_module_books:
+    :path: "../flutter_module_books/.ios/Flutter"
+  FlutterPluginRegistrant:
+    :path: "../flutter_module_books/.ios/Flutter/FlutterPluginRegistrant"
+
+SPEC CHECKSUMS:
+  Flutter: ac41d61a47ae5bf8195a5598d2d63754888ec0d5
+  flutter_module_books: 537fdde264c187fc97299f730dd35974055cac20
+  FlutterPluginRegistrant: 2afd5ea46d3a949472c9b7da6462d8fbf7d8b16e
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+
+PODFILE CHECKSUM: 2acebd730fcd3d0a1af6cf58468c6d30e6404bb5
+
+COCOAPODS: 1.10.1
