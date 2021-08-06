@@ -12,7 +12,7 @@ class MineViewController: ZMBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = "我的"
+        self.navigationItem.title = "其它"
     }
     
 

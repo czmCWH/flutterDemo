@@ -16,9 +16,9 @@ class ZMTabBarController: UITabBarController {
         UITabBar.appearance().backgroundImage = UIImage()
         UITabBar.appearance().barTintColor = UIColor.white
         
-        addChildViewController(HomeViewController(), "首页", "tabbar_home_")
-        addChildViewController(OtherViewController(), "其它", "tabbar_extend_")
-        addChildViewController(MineViewController(), "我的", "tabbar_mine_")
+        addChildViewController(HomeViewController(), "路由", "tabbar_home_")
+        addChildViewController(OtherViewController(), "组件", "tabbar_extend_")
+        addChildViewController(MineViewController(), "其它", "tabbar_mine_")
         
     }
     

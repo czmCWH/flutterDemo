@@ -13,7 +13,7 @@ class HomeViewController: ZMBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = "首页"
+        self.navigationItem.title = "路由"
         
         
     }
