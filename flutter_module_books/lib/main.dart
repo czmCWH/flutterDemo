@@ -1,6 +1,19 @@
 import 'package:flutter/material.dart';
+import 'onePage.dart';
+import 'navigatorPage.dart';
 
+// 默认Dart的入口
 void main() => runApp(MyApp());
+
+// 指定Dart的入口
+@pragma('vm:entry-point')
+void oneEntrypoint() => runApp(OnePage());
+
+// 指定Dart的入口
+@pragma('vm:entry-point')
+void navigatorEntrypoint() {
+  runApp(NavigatorPage());
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -70,6 +83,33 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
+class OtherApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'text widget',
+      home: Scaffold(
+        body: Container(
+          width: 200.0,
+          height: 200.0,
+          margin: const EdgeInsets.fromLTRB(50, 200, 0, 0),
+          padding: const EdgeInsets.fromLTRB(0, 0, 25, 0),
+          color: Colors.orange,
+          alignment: Alignment.centerRight,
+          child: Container(
+            width: 100.0,
+            height: 100.0,
+            color: Colors.red,
+            alignment: Alignment.centerLeft,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+
 
 /*
 
@@ -79,6 +119,8 @@ class _MyHomePageState extends State<MyHomePage> {
       Widget 是不断的销毁和创建的
       当我们自己的状态发生改变时，并不希望重新创建一个新的 State
 
-> 2、
+> 2、调用 FlutterEngine 的 run() 函数，默认会调用 lib/main.dart 文件里的 main() 函数。
+ 如果通过官方文档中的 flutterEngine.run(withEntrypoint: "twoEntrypoint", libraryURI: "twoPage.dart") 方式来指定不同文件中某个入口函数，这样是无法找到的，
+ flutter github issues 中有介绍，必须把其它文件中的入口函数写在main.dart文件中才有效。
 
 */

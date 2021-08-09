@@ -33,7 +33,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = ZMTabBarController()
         window?.makeKeyAndVisible()
         
-        self.flutterEngine.run(withEntrypoint: nil)
+        // 使用默认的 Dart 入口 lib/main.dart 文件里的 main() 函数。
+//        self.flutterEngine.run(withEntrypoint: nil)
+        
+        // 使用指定的 Dart 入口
+//        self.flutterEngine.run(withEntrypoint: "oneEntrypoint")
+//        self.flutterEngine.run(withEntrypoint: "oneEntrypoint", libraryURI: "onePage.dart") 这样会报错找不到文件
+        
+        // 使用自定义的 Dart 入口，进行相关的开发
+        self.flutterEngine.run(withEntrypoint: "navigatorEntrypoint")
+        
         GeneratedPluginRegistrant.register(with: self.flutterEngine)
         
         return self.lifeCycleDelegate.application(application, didFinishLaunchingWithOptions: launchOptions ?? [:])

@@ -18,7 +18,7 @@ class OtherViewController: ZMBaseViewController, UITableViewDataSource, UITableV
 
         self.navigationItem.title = "基础组件"
         
-        let tableView = UITableView(frame: .zero, style: .plain)
+        tableView = UITableView(frame: .zero, style: .plain)
         tableView.backgroundColor = UIColor.white
         tableView.tableHeaderView = UIView()
         tableView.tableFooterView = UIView()
