@@ -10,6 +10,7 @@
 		4C665FA326BD09D00028BF1B /* UIButton_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C665FA226BD09D00028BF1B /* UIButton_Extension.swift */; };
 		4C665FA526BD0AEF0028BF1B /* UIColor_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C665FA426BD0AEF0028BF1B /* UIColor_Extension.swift */; };
 		4C665FA726BD0B080028BF1B /* UIStackView_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C665FA626BD0B080028BF1B /* UIStackView_Extension.swift */; };
+		4C72576326C1646C008577E4 /* ZMFlutterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C72576226C1646C008577E4 /* ZMFlutterViewController.swift */; };
 		4C9B2FF126BB95BD002F67C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9B2FF026BB95BD002F67C7 /* AppDelegate.swift */; };
 		4C9B2FFA26BB95BD002F67C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C9B2FF926BB95BD002F67C7 /* Assets.xcassets */; };
 		4C9B2FFD26BB95BD002F67C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C9B2FFB26BB95BD002F67C7 /* LaunchScreen.storyboard */; };
@@ -29,6 +30,7 @@
 		4C665FA226BD09D00028BF1B /* UIButton_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton_Extension.swift; sourceTree = "<group>"; };
 		4C665FA426BD0AEF0028BF1B /* UIColor_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor_Extension.swift; sourceTree = "<group>"; };
 		4C665FA626BD0B080028BF1B /* UIStackView_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView_Extension.swift; sourceTree = "<group>"; };
+		4C72576226C1646C008577E4 /* ZMFlutterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMFlutterViewController.swift; sourceTree = "<group>"; };
 		4C9B2FED26BB95BD002F67C7 /* testFlutter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testFlutter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C9B2FF026BB95BD002F67C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C9B2FF926BB95BD002F67C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				4C9B300C26BB96C7002F67C7 /* ZMTabBarController.swift */,
 				4C9B300E26BB96E4002F67C7 /* ZMNavigationController.swift */,
 				4C9B301026BB96F0002F67C7 /* ZMBaseViewController.swift */,
+				4C72576226C1646C008577E4 /* ZMFlutterViewController.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				4C9B301326BB970A002F67C7 /* HomeViewController.swift in Sources */,
 				4C665FA326BD09D00028BF1B /* UIButton_Extension.swift in Sources */,
 				4C9B301526BB9712002F67C7 /* OtherViewController.swift in Sources */,
+				4C72576326C1646C008577E4 /* ZMFlutterViewController.swift in Sources */,
 				4C9B300D26BB96C7002F67C7 /* ZMTabBarController.swift in Sources */,
 				4C9B301726BB971A002F67C7 /* MineViewController.swift in Sources */,
 				4C665FA726BD0B080028BF1B /* UIStackView_Extension.swift in Sources */,

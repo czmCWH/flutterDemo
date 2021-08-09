@@ -11,9 +11,9 @@ import Flutter
 class HomeViewController: ZMBaseViewController, UITableViewDataSource, UITableViewDelegate {
     
     private var tableView: UITableView!
-    private var dataArray = ["默认调用lib/main.dart 文件里的 main() 函数",
-                             "指定调用lib/onePage.dart 文件里的 oneEntrypoint() 函数",
-                             "指定调用lib/twoPage.dart 文件里的 twoEntrypoint() 函数"]
+    private var dataArray = ["使用当前 AppDelegate 中启动的 FlutterEngine 来展示默认页面",
+                             "使用默认页面，并显示当前路由栈中的某个页面",
+                             "启动一个新的 FlutterEngine 来展示 FlutterViewController"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,7 @@ class HomeViewController: ZMBaseViewController, UITableViewDataSource, UITableVi
         tableView.backgroundColor = UIColor.white
         tableView.tableHeaderView = UIView()
         tableView.tableFooterView = UIView()
-        tableView.rowHeight = 50
+        tableView.rowHeight = 60
         tableView.separatorStyle = .singleLine
         tableView.dataSource = self
         tableView.delegate = self
@@ -46,6 +46,7 @@ class HomeViewController: ZMBaseViewController, UITableViewDataSource, UITableVi
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellID", for: indexPath)
         cell.textLabel?.text = self.dataArray[indexPath.row]
+        cell.textLabel?.numberOfLines = 0
         return cell
     }
     
@@ -53,20 +54,26 @@ class HomeViewController: ZMBaseViewController, UITableViewDataSource, UITableVi
         tableView.deselectRow(at: indexPath, animated: true)
         
         guard let flutterEngine = (UIApplication.shared.delegate as? AppDelegate)?.flutterEngine else { return }
-//        switch indexPath.row {
-//        case 0:
-//            flutterEngine.run(withEntrypoint: nil)
-//        case 1:
-//            flutterEngine.run(withEntrypoint: "oneEntrypoint", libraryURI: "onePage.dart")
-//        case 2:
-//            flutterEngine.run(withEntrypoint: "twoEntrypoint", libraryURI: "twoPage.dart")
-//        default:
-//            break
-//        }
+        switch indexPath.row {
+        case 0:
+            let flutterVc = ZMFlutterViewController(engine: flutterEngine, nibName: nil, bundle: nil)
+            flutterVc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(flutterVc, animated: true)
+        case 1:
+            let flutterVc = ZMFlutterViewController(engine: flutterEngine, nibName: nil, bundle: nil)
+            flutterVc.pushRoute("/containerPage")
+            flutterVc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(flutterVc, animated: true)
+        case 2:
+            let flutterVc = ZMFlutterViewController(project: FlutterDartProject(), initialRoute: "/containerPage", nibName: nil, bundle: nil)
+            flutterVc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(flutterVc, animated: true)
+        default:
+            break
+        }
+    
         
-        let flutterViewController = FlutterViewController(engine: flutterEngine, nibName: nil, bundle: nil)
-        flutterViewController.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(flutterViewController, animated: true)
+        
         
     }
 

@@ -42,6 +42,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // 使用自定义的 Dart 入口，进行相关的开发
         self.flutterEngine.run(withEntrypoint: "navigatorEntrypoint")
+        // 设置初始路由
+//        self.flutterEngine.run(withEntrypoint: "navigatorEntrypoint", initialRoute: "/b")
         
         GeneratedPluginRegistrant.register(with: self.flutterEngine)
         

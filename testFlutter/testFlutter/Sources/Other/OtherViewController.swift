@@ -11,7 +11,7 @@ import SnapKit
 class OtherViewController: ZMBaseViewController, UITableViewDataSource, UITableViewDelegate {
     
     private var tableView: UITableView!
-    private var dataArray = ["Container", "Text", "Image", "ListView", "GridView", "Center", "Row", "Column", "Expanded", "Stack", "ListTile", "ElevatedButton", "Scaffold", "Navigator"]
+    private var dataArray = ["Text", "Container", "Image", "ListView", "GridView", "Center", "Row", "Column", "Expanded", "Stack", "ListTile", "ElevatedButton", "Scaffold", "Navigator"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +48,18 @@ class OtherViewController: ZMBaseViewController, UITableViewDataSource, UITableV
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
+        guard let flutterEngine = (UIApplication.shared.delegate as? AppDelegate)?.flutterEngine else { return }
+        let flutterVc = ZMFlutterViewController(engine: flutterEngine, nibName: nil, bundle: nil)
         
+        switch indexPath.row {
+        case 0:
+            flutterVc.pushRoute("/textPage")
+        default:
+            break
+        }
+        
+        flutterVc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(flutterVc, animated: true)
     }
 
 }
